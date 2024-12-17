@@ -36,7 +36,7 @@ export default async function SlugPage({ params }: { params: tParams }) {
         </div>
       </div>
       {/* Content */}
-      <div className='container mx-auto px-4 py-20 pb-4'>
+      <div className='container mx-auto max-w-3xl px-4 py-20 pb-4'>
         <p className='pb-10 text-base text-gray-500'>{formatDate(article.createdAt)}</p>
         <PortableText
           dataset={env.NEXT_PUBLIC_SANITY_DATASET}
@@ -98,13 +98,23 @@ export default async function SlugPage({ params }: { params: tParams }) {
               return <a href={children}>{children}</a>;
             },
             youtube: ({ url }: { url: string }) => {
+              // Convert various YouTube URL formats to embed URL
+              const getYoutubeEmbedUrl = (url: string) => {
+                const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
+                const match = url.match(regExp);
+
+                const videoId = match && match[2].length === 11 ? match[2] : null;
+
+                return videoId ? `https://www.youtube.com/embed/${videoId}` : url;
+              };
+
               return (
                 <div className='relative my-8 aspect-video w-full'>
                   <iframe
-                    src={url}
+                    src={getYoutubeEmbedUrl(url)}
                     className='absolute left-0 top-0 h-full w-full'
                     frameBorder='0'
-                    allow='autoplay; fullscreen; picture-in-picture'
+                    allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
                     allowFullScreen
                   />
                 </div>
