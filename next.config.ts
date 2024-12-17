@@ -11,6 +11,10 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'cdn.sanity.io',
       },
+      {
+        protocol: 'https',
+        hostname: 'mtgassetslads.s3.ap-southeast-2.amazonaws.com',
+      },
     ],
   },
   /* config options here */
