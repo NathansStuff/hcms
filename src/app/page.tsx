@@ -4,8 +4,8 @@ import Link from 'next/link';
 
 import { Card, CardContent } from '@/components/ui/card';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
-import { AnimatedBackground } from '@/features/common/AnimatedBackground';
 import { TypewriterEffect } from '@/components/ui/TypewriterEffect';
+import { AnimatedBackground } from '@/features/common/AnimatedBackground';
 
 const imageUrls = [
   'https://mtgassetslads.s3.ap-southeast-2.amazonaws.com/hcms1.PNG',

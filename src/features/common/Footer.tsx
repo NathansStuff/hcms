@@ -9,7 +9,7 @@ function Footer() {
   return (
     <div className='flex flex-col items-center justify-center bg-black pb-12 pt-32 text-white'>
       <Logo />
-      <div className='flex flex-col items-center justify-center gap-10 px-4 md:px-10 pt-20'>
+      <div className='flex flex-col items-center justify-center gap-10 px-4 pt-20 md:px-10'>
         <div className='flex flex-col items-center justify-center gap-10 lg:flex-row'>
           <div className='flex flex-row items-center justify-center gap-5'>
             <Link

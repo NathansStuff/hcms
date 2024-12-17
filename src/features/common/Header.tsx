@@ -50,7 +50,7 @@ function Header() {
   return (
     <>
       <div
-        className={`fixed left-0 right-0 top-0 z-50 flex h-24 items-center justify-between px-10 md:px-20 transition-colors duration-200 ${
+        className={`fixed left-0 right-0 top-0 z-50 flex h-24 items-center justify-between px-10 transition-colors duration-200 md:px-20 ${
           isScrolled && !isMenuOpen ? 'bg-black/50 backdrop-blur-sm' : 'bg-transparent'
         }`}
       >
