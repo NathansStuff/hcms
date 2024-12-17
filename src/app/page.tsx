@@ -1,9 +1,9 @@
+import { ArrowRight, Database,Newspaper } from 'lucide-react';
+import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, Newspaper, Database } from 'lucide-react';
 
 import { Card, CardContent } from '@/components/ui/card';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
-import Image from 'next/image';
 
 export default function HomePage() {
   return (
