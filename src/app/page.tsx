@@ -1,9 +1,11 @@
-import { ArrowRight, Database, Newspaper } from 'lucide-react';
+import { ArrowRight, Database } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
 import { Card, CardContent } from '@/components/ui/card';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
+import { AnimatedBackground } from '@/features/common/AnimatedBackground';
+import { TypewriterEffect } from '@/components/ui/TypewriterEffect';
 
 const imageUrls = [
   'https://mtgassetslads.s3.ap-southeast-2.amazonaws.com/hcms1.PNG',
@@ -14,23 +16,38 @@ const imageUrls = [
 
 export default function HomePage() {
   return (
-    <main className='h-full w-full flex-grow bg-gradient-to-br from-[#06031f] to-[#01001e]'>
-      <main className='container mx-auto px-4 py-16 pt-28 text-center'>
-        <p className='mb-2 text-xl text-gray-600'>A sample project showcasing the power of Sanity CMS and Next.js</p>
-        <p className='mb-8 text-sm text-gray-600'>
-          The article content and overall display is replicated from <Link href='https://dijgtal.com/'>D/JGTAL</Link>
+    <AnimatedBackground className='h-full w-full'>
+      <main className='container relative z-10 mx-auto px-4 py-16 pt-28 text-center'>
+        <h3 className='mb-2 text-2xl text-white md:pt-10 md:text-4xl'>
+          A sample project showcasing the power of{' '}
+          <TypewriterEffect
+            words={['Sanity CMS', 'Next.js', 'Tailwind CSS', 'Lucide Icons', 'Shadcn UI']}
+            className='font-bold'
+          />
+        </h3>
+        <p className='mb-8 text-sm text-white/80'>
+          The article content and overall display is replicated from{' '}
+          <Link
+            href='https://dijgtal.com/'
+            className='underline hover:text-white'
+          >
+            D/JGTAL
+          </Link>
         </p>
-        <p className='mb-8 text-sm text-gray-600'>
+        <p className='mb-8 text-sm text-white/80'>
           The project is built with Next.js, Tailwind CSS, Lucide Icons, Shadcn UI and Sanity CMS. The code is available
-          on <Link href='https://github.com/NathansStuff/hcms'>GitHub</Link>.
+          on{' '}
+          <Link
+            href='https://github.com/NathansStuff/hcms'
+            className='underline hover:text-white'
+          >
+            GitHub
+          </Link>
+          .
         </p>
 
         <div className='mb-12 flex justify-center space-x-4'>
-          <div className='flex items-center space-x-2 text-blue-600'>
-            <Newspaper size={24} />
-            <span>Dynamic Articles</span>
-          </div>
-          <div className='flex items-center space-x-2 text-green-600'>
+          <div className='flex items-center space-x-2 text-white'>
             <Database size={24} />
             <span>Sanity CMS</span>
           </div>
@@ -70,6 +87,6 @@ export default function HomePage() {
           <ArrowRight className='ml-2 transition-transform group-hover:translate-x-1' />
         </Link>
       </main>
-    </main>
+    </AnimatedBackground>
   );
 }
