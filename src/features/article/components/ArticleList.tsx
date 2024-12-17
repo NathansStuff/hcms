@@ -1,6 +1,7 @@
-import Link from 'next/link';
-import { ArticleInfo } from '../types/ArticleInfo';
+import { Link } from '@/components/ui/link';
 import { formatDate } from '@/utils/dateFormat';
+
+import { ArticleInfo } from '../types/ArticleInfo';
 
 interface ArticleListProps {
   articles: ArticleInfo[];

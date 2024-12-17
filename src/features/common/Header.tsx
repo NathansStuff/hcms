@@ -1,9 +1,12 @@
 'use client';
 
-import Link from 'next/link';
-import Logo from './Logo';
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
+
 import { Facebook, Instagram, Linkedin } from 'lucide-react';
+
+import { Link } from '@/components/ui/link';
+
+import Logo from './Logo';
 
 const headerItems = [
   { label: 'Work', href: '/' },
@@ -63,7 +66,7 @@ function Header() {
                 isMenuOpen ? 'rotate-90 opacity-0' : 'opacity-100'
               }`}
             >
-              //
+              {'//'}
             </span>
             <span
               className={`absolute left-0 text-theme transition-all duration-300 ${
@@ -83,12 +86,12 @@ function Header() {
         }`}
       >
         <nav
-          className={`flex h-full flex-col px-6 md:container md:mx-auto md:flex-row md:items-center md:justify-center md:gap-20 transition-all duration-300 ${
+          className={`flex h-full flex-col px-6 transition-all duration-300 md:container md:mx-auto md:flex-row md:items-center md:justify-center md:gap-20 ${
             isMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
           }`}
         >
           {/* Primary navigation */}
-          <div className='mt-32 md:mt-0 flex w-full flex-col items-start justify-start gap-2 text-4xl font-bold text-white md:text-7xl'>
+          <div className='mt-32 flex w-full flex-col items-start justify-start gap-2 text-4xl font-bold text-white md:mt-0 md:text-7xl'>
             {headerItems.map((item) => (
               <Link
                 href={item.href}
@@ -101,10 +104,10 @@ function Header() {
           </div>
 
           {/* Divider line for md screens */}
-          <div className='hidden md:block w-[3px] h-96 bg-white/20'></div>
+          <div className='hidden h-96 w-[3px] bg-white/20 md:block'></div>
 
           {/* Secondary navigation and socials container */}
-          <div className='flex flex-col pt-20 mb-20 md:my-0 gap-12 md:gap-20 md:w-full md:pt-0'>
+          <div className='mb-20 flex flex-col gap-12 pt-20 md:my-0 md:w-full md:gap-20 md:pt-0'>
             <div className='flex w-full flex-col items-start justify-start gap-2 text-xl font-bold text-white md:text-3xl'>
               {secondaryItems.map((item) => (
                 <Link

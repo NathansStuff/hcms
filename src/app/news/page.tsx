@@ -1,7 +1,8 @@
+import { getAllArticles } from '@/features/article/api/getAllArticles';
 import ArticleList from '@/features/article/components/ArticleList';
 import { AnimatedBackground } from '@/features/common/AnimatedBackground';
+
 import PressEnquiry from './_components/PressEnquiry';
-import { getAllArticles } from '@/features/article/api/getAllArticles';
 
 async function NewsPage() {
   // const articles = mockArticleInfo;

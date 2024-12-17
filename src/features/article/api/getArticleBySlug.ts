@@ -1,4 +1,5 @@
 import { BaseApiClient } from '@/features/apiClient/lib/BaseApiClient';
+
 import { Article } from '../types/Article';
 
 export async function getArticleBySlug(slug: string): Promise<Article | null> {

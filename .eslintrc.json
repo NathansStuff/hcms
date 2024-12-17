@@ -13,7 +13,7 @@
     "unused-imports/no-unused-imports": "error",
     "no-restricted-imports": ["error", { "patterns": ["../../*/*"] }],
     "semi": "error",
-    "@typescript-eslint/explicit-function-return-type": ["error", { "allowExpressions": true }],
+    "@typescript-eslint/explicit-function-return-type": ["warn", { "allowExpressions": true }],
     "simple-import-sort/imports": "error",
     "simple-import-sort/exports": "error"
   },

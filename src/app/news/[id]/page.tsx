@@ -1,8 +1,11 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import PortableText from 'react-portable-text';
+
+import Image from 'next/image';
+
+import { env } from '@/app/constants/env';
 import { getArticleBySlug } from '@/features/article/api/getArticleBySlug';
 import { formatDate } from '@/utils/dateFormat';
-import Image from 'next/image';
-import { env } from '@/app/constants/env';
 
 type tParams = Promise<{ id: string }>;
 

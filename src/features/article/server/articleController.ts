@@ -1,9 +1,10 @@
 import { NextRequest } from 'next/server';
+import { NextResponse } from 'next/server';
 
 import { ResponseCode } from '@/types/ResponseCode';
-import { NextResponse } from 'next/server';
-import { getAllPosts, getPostBySlug } from './articleService';
 import { getLastSegment } from '@/utils/getLastSegment';
+
+import { getAllPosts, getPostBySlug } from './articleService';
 
 export async function getArticlesHandler(): Promise<NextResponse> {
   const result = await getAllPosts();

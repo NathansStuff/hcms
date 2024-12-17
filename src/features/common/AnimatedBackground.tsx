@@ -124,7 +124,9 @@ export function AnimatedBackground({ children, className }: Props) {
   }, []);
 
   return (
-    <div className={`relative w-full overflow-hidden bg-gradient-to-br from-[#06031f] to-[#01001e] ${className ?? 'h-[65vh] md:h-[40vh]'}`}>
+    <div
+      className={`relative w-full overflow-hidden bg-gradient-to-br from-[#06031f] to-[#01001e] ${className ?? 'h-[65vh] md:h-[40vh]'}`}
+    >
       <canvas
         ref={canvasRef}
         className='absolute inset-0 h-full w-full'
