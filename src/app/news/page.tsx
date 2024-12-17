@@ -1,6 +1,9 @@
+import ArticleList from '@/features/article/components/ArticleList';
+import { mockArticleInfo } from '@/features/article/mocks/mockArticleInfo';
 import { AnimatedBackground } from '@/features/common/AnimatedBackground';
 
 function NewsPage() {
+  const articles = mockArticleInfo; // TODO: get from API
   return (
     <div>
       <AnimatedBackground>
@@ -9,6 +12,7 @@ function NewsPage() {
           <h2 className='text-5xl font-bold sm:text-7xl md:text-8xl'>Catch up on our latest</h2>
         </div>
       </AnimatedBackground>
+      <ArticleList articles={articles} />
       {/* Latest Articles */}
       {/* Contact Form */}
       {/* Footer */}
