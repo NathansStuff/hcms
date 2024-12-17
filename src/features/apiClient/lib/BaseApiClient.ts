@@ -1,4 +1,4 @@
-import { env } from '@/constants';
+import { env } from '@/app/constants/env';
 
 import { initializeApiClient } from '../service/clientInstance';
 

@@ -28,7 +28,7 @@ function ArticleList({ articles }: ArticleListProps) {
             <p className='mb-8 leading-relaxed text-gray-700 md:mb-0 md:flex-1'>{article.description}</p>
             <div className='md:flex-[0.5] md:pt-[1.25rem]'>
               <Link
-                href={`/articles/${article.slug}`}
+                href={`/news/${article.slug}`}
                 className='text-theme group relative inline-flex items-center pl-5 font-medium'
               >
                 <span className='bg-theme absolute left-0 top-[-1.25rem] h-[calc(100%+2.5rem)] w-[3px] transition-all duration-300 group-hover:w-[calc(100%+1.25rem)]' />

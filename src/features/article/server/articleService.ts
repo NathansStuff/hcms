@@ -2,13 +2,13 @@ import sanity from '@/lib/sanity';
 
 export async function getAllPosts() {
   const results = await sanity.fetch(
-    `*[_type =="post"]{
-   _id,
-   description,
-   slug {
-    current
-   }
-  } | order(date asc)`
+    `*[_type == "post"] {
+  _id,
+  description,
+  title,
+  "slug": slug.current
+} | order(date asc)
+`
   );
   return results;
 }
