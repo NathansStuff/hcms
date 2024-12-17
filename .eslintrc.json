@@ -1,0 +1,42 @@
+{
+  "extends": ["next/core-web-vitals", "next/typescript", "prettier"],
+  "plugins": ["unused-imports", "simple-import-sort", "n"],
+  "ignorePatterns": ["src/components/ui/*", "scripts/*"], // Shadcn UI components are not linted
+  "globals": {
+    "React": "readonly" // No need to import React in every file
+  },
+  "rules": {
+    "prefer-arrow-callback": ["error"],
+    "prefer-template": ["error"],
+    "n/no-process-env": ["error"],
+    "quotes": ["error", "single"],
+    "unused-imports/no-unused-imports": "error",
+    "no-restricted-imports": ["error", { "patterns": ["../../*/*"] }],
+    "semi": "error",
+    "@typescript-eslint/explicit-function-return-type": ["error", { "allowExpressions": true }],
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error"
+  },
+  "overrides": [
+    {
+      "files": ["**/*.js", "**/*.ts", "**/*.tsx"],
+      "rules": {
+        "simple-import-sort/imports": [
+          "error",
+          {
+            "groups": [
+              ["^react"],
+              ["^@?\\w"],
+              ["^@(/.*|$)"],
+              ["^\\u0000"],
+              ["^\\.\\.(?!/?$)", "^\\.\\./?$"],
+              ["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"],
+              ["^.+\\.?(css)$"]
+            ]
+          }
+        ],
+        "simple-import-sort/exports": "error"
+      }
+    }
+  ]
+}
