@@ -31,7 +31,7 @@ export default {
       },
     },
     {
-      name: 'publishedAt',
+      name: 'createdAt',
       title: 'Published at',
       type: 'datetime',
     },

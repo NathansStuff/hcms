@@ -1,10 +1,12 @@
 import { z } from 'zod';
 
-export const ArticleInfo = z.object({
+export const Article = z.object({
   createdAt: z.string(),
   title: z.string(),
   slug: z.string(),
   description: z.string(),
+  mainImage: z.string(),
+  body: z.any(),
 });
 
-export type ArticleInfo = z.infer<typeof ArticleInfo>;
+export type Article = z.infer<typeof Article>;

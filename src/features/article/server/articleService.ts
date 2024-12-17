@@ -6,8 +6,9 @@ export async function getAllPosts() {
   _id,
   description,
   title,
+  "createdAt": createdAt,
   "slug": slug.current
-} | order(date asc)
+} | order(createdAt asc)
 `
   );
   return results;
@@ -20,8 +21,8 @@ export async function getPostBySlug(slug: string) {
    createdAt,
    title,
    description,
-   mainImage,
-   slug,
+   "mainImage": mainImage.asset->url,
+   "slug": slug.current,
    body
   }
   `,

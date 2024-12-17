@@ -16,6 +16,8 @@ export const env = createEnv({
   client: {
     NEXT_PUBLIC_ENVIRONMENT: z.nativeEnum(Environment),
     NEXT_PUBLIC_BASE_URL: z.string().url(),
+    NEXT_PUBLIC_SANITY_DATASET: z.string(),
+    NEXT_PUBLIC_SANITY_PROJECT_ID: z.string(),
   },
   onValidationError: (error: ZodError) => {
     console.error('❌ Invalid environment variables:', error.flatten().fieldErrors);
@@ -30,6 +32,8 @@ export const env = createEnv({
     // Client-side environment variables
     NEXT_PUBLIC_ENVIRONMENT: process.env.NEXT_PUBLIC_ENVIRONMENT,
     NEXT_PUBLIC_BASE_URL: process.env.NEXT_PUBLIC_BASE_URL,
+    NEXT_PUBLIC_SANITY_DATASET: process.env.NEXT_PUBLIC_SANITY_DATASET,
+    NEXT_PUBLIC_SANITY_PROJECT_ID: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
   },
   emptyStringAsUndefined: true,
 });
