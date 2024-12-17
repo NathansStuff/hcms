@@ -4,9 +4,10 @@ import { useEffect, useRef } from 'react';
 
 interface Props {
   children: React.ReactNode;
+  className?: string;
 }
 
-export function AnimatedBackground({ children }: Props) {
+export function AnimatedBackground({ children, className }: Props) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -123,7 +124,7 @@ export function AnimatedBackground({ children }: Props) {
   }, []);
 
   return (
-    <div className='relative h-[65vh] w-full overflow-hidden bg-gradient-to-br from-[#06031f] to-[#01001e] md:h-[40vh]'>
+    <div className={`relative w-full overflow-hidden bg-gradient-to-br from-[#06031f] to-[#01001e] ${className ?? 'h-[65vh] md:h-[40vh]'}`}>
       <canvas
         ref={canvasRef}
         className='absolute inset-0 h-full w-full'

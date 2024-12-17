@@ -1,6 +1,7 @@
 import ArticleList from '@/features/article/components/ArticleList';
 import { mockArticleInfo } from '@/features/article/mocks/mockArticleInfo';
 import { AnimatedBackground } from '@/features/common/AnimatedBackground';
+import PressEnquiry from './_components/PressEnquiry';
 
 function NewsPage() {
   const articles = mockArticleInfo; // TODO: get from API
@@ -13,9 +14,14 @@ function NewsPage() {
         </div>
       </AnimatedBackground>
       <ArticleList articles={articles} />
-      {/* Latest Articles */}
-      {/* Contact Form */}
-      {/* Footer */}
+      <AnimatedBackground className='h-[97vh] md:h-[60vh]'>
+        <div className='relative z-10 flex h-full flex-col justify-center px-10 text-center text-white'>
+          <h2 className='pb-20 text-5xl font-bold md:text-6xl'>Do you have a press enquiry?</h2>
+          <div className='flex justify-center'>
+            <PressEnquiry />
+          </div>
+        </div>
+      </AnimatedBackground>
     </div>
   );
 }
